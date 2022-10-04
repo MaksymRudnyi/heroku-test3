@@ -12,6 +12,7 @@ const typeDefs = `
         totalPosts: Int!
     }
 `;
+
 const resolvers = {
   Query: {
     totalPosts: () => 100,
