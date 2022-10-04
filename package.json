@@ -5,6 +5,6 @@
   "engines": {
     "node": "16.x"
   },
-  "postinstall": "(cd client && npm install); (npm run build); (cd server && npm install)",
+  "postinstall": "(cd client && npm install); (sd client && npm run build); (cd server && npm install)",
   "main": "server/index.js"
 }
