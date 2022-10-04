@@ -36,16 +36,16 @@ async function startApolloServer(typeDefs, resolvers) {
   await server.start();
   server.applyMiddleware({ app });
 
-  // app.use(express.static(path.join(__dirname, "../client", "build")));
-  // app.use(express.static("public"));
+  app.use(express.static(path.join(__dirname, "../client", "build")));
+  app.use(express.static("public"));
 
   app.get("/rest", function (req, res) {
     res.json({ data: "api working" });
   });
 
-  // app.get('*', (req,res) => {
-  //   res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
-  // });
+  app.get('*', (req,res) => {
+    res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
+  });
 
   await new Promise(resolve => httpServer.listen({ port: process.env.PORT || 80 }, resolve));
   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
