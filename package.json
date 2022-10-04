@@ -3,7 +3,8 @@
     "start": "node server/index.js"
   },
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
+  "postinstall": "(cd client && npm install); (npm run build); (cd server && npm install)",
   "main": "server/index.js"
 }
